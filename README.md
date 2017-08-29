@@ -96,8 +96,10 @@ Pseudo-code:
 - $V_{db}^{corrected} = \frac{V_{db}}{1 - \beta_1^t}$
 - $S_{dw} = \beta_2 V_{\delta W} + (1-\beta_2) \delta W^2$
 - $S_{db} = \beta_2 V_{\delta b} + (1-\beta_2) \delta b^2$
-- $W = W - \alpha \frac{V_{dw}^{corrected}}{\sqrt{S_{\delta W}} + \epsilon}$
-- $b = W - \alpha \frac{V_{db}^{corrected}}{\sqrt{S_{\delta b}} + \epsilon}$
+- $S_{dw}^{corrected} = \frac{S_{dw}}{1 - \beta_2^t}$
+- $S_{db}^{corrected} = \frac{S_{db}}{1 - \beta_2^t}$
+- $W = W - \alpha \frac{V_{dw}^{corrected}}{\sqrt{S_{\delta W}^{corrected}} + \epsilon}$
+- $b = W - \alpha \frac{V_{db}^{corrected}}{\sqrt{S_{\delta b}^{corrected}} + \epsilon}$
 
 Hyper-parameters:
 - $\alpha$: tuned
